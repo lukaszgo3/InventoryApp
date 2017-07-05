@@ -20,10 +20,10 @@ public class ItemsDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String SQL_CREATE_PRODUCTS_TABLE = "CREATE TABLE " + ItemsEntry.TABLE_NAME + " ("
                 + ItemsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + ItemsEntry.COLUMN_PRODUCT_NAME + " TEXT NOT NULL, "
-                + ItemsEntry.COLUMN_PRODUCT_IMAGE + " TEXT);"
-                + ItemsEntry.COLUMN_PRODUCT_PRICE + " FLOAT NOT NULL DEFAULT 0.00, "
-                + ItemsEntry.COLUMN_PRODUCT_QUANTITY + " INTEGER NOT NULL DEFAULT 0, ";
+                + ItemsEntry.COLUMN_ITEM_NAME + " TEXT NOT NULL, "
+                + ItemsEntry.COLUMN_ITEM_IMAGE + " TEXT);"
+                + ItemsEntry.COLUMN_ITEM_PRICE + " FLOAT NOT NULL DEFAULT 0.00, "
+                + ItemsEntry.COLUMN_ITEM_QUANTITY + " INTEGER NOT NULL DEFAULT 0, ";
 
         db.execSQL(SQL_CREATE_PRODUCTS_TABLE);
     }
