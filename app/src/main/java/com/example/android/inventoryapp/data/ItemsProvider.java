@@ -188,7 +188,7 @@ public class ItemsProvider extends ContentProvider {
 
             Integer quantity = values.getAsInteger(ItemsEntry.COLUMN_ITEM_QUANTITY);
             if (quantity != null && quantity < 0) {
-                throw new IllegalArgumentException("Quantity Error");
+                throw new IllegalArgumentException("QuantityDialog Error");
             }
         }
 

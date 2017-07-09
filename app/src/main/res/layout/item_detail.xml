@@ -33,10 +33,8 @@
             android:id="@+id/quantityTextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/list_product_margin"
-            android:layout_toRightOf="@id/quantity"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/default_product_quantity"
+            android:text="ggg"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#AEB6BD" />
 
@@ -46,7 +44,7 @@
             android:layout_height="wrap_content"
 
             android:fontFamily="sans-serif-medium"
-            android:text="@string/list_product_quantity_title"
+            android:text="aaa"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#AEB6BD"
             android:layout_alignParentTop="true"
@@ -59,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/list_product_margin">
+     >
 
         <TextView
             android:id="@+id/priceId"

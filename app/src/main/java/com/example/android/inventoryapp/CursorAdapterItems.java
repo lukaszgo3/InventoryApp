@@ -30,7 +30,7 @@ public class CursorAdapterItems extends CursorAdapter {
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
-        return LayoutInflater.from(context).inflate(R.layout.ItemDetail, parent, false);
+        return LayoutInflater.from(context).inflate(R.layout.item_detail, parent, false);
     }
 
     @Override
