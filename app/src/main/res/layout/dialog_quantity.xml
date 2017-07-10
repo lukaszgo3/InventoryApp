@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="@string/quantity"
+        android:text="Quantity"
         android:textSize="18sp"/>
 
     <EditText
@@ -16,6 +16,6 @@
         android:id="@+id/edit_text_quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/default_product_quantity"/>
+        android:text="0"/>
 
 </LinearLayout>

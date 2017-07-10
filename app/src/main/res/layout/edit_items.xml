@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="@dimen/edit_activity_margin">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="@string/edit_activity_name_title"
+            android:text="Name: "
             android:textColor="#2B3D4D"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -23,9 +22,9 @@
             android:id="@+id/nameEditId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/edit_activity_margin"
+            android:layout_marginLeft="15dp"
             android:fontFamily="sans-serif"
-            android:text="@string/default_product_name"
+            android:text="Item "
             android:textSize="22sp" />
 
     </LinearLayout>
@@ -40,14 +39,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/edit_activity_margin">
+        android:layout_marginTop="15dp">
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="@string/product_price_title"
+            android:text="Price: "
             android:textColor="#2B3D4D"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -56,10 +55,10 @@
             android:id="@+id/priceEditId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/edit_activity_margin"
+            android:layout_marginLeft="10dp"
             android:fontFamily="sans-serif"
             android:inputType="numberDecimal"
-            android:text="@string/default_product_price"
+            android:text="500.00"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -67,14 +66,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/edit_activity_margin">
+        android:layout_marginTop="15dp">
 
         <TextView
             android:id="@+id/quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="@string/edit_activity_quantity_title"
+            android:text="Quantity: "
             android:textColor="#2B3D4D"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -83,10 +82,10 @@
             android:id="@+id/quantityTextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/edit_activity_margin"
+            android:layout_marginLeft="10dp"
             android:fontFamily="sans-serif"
             android:inputType="number"
-            android:text="@string/default_product_quantity"
+            android:text="0"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -94,27 +93,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/edit_activity_margin">
+        android:layout_marginTop="15sp">
 
         <Button
             android:id="@+id/buttonQuantity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/edit_activity_margin"
-            android:layout_marginTop="@dimen/edit_activity_margin"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="1"
             android:onClick="onModifyQuantity"
-            android:text="@string/btn_quantity" />
+            android:text="modify quantity" />
 
         <Button
             android:id="@+id/btn_order"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/edit_activity_margin"
-            android:layout_marginTop="@dimen/edit_activity_margin"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="1"
             android:onClick="onOrder"
-            android:text="@string/btn_order" />
+            android:text="order" />
 
 
     </LinearLayout>
@@ -123,19 +122,19 @@
         android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/edit_activity_margin"
-        android:layout_marginTop="@dimen/edit_activity_margin"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
         android:onClick="onSave"
-        android:text="@string/btn_save" />
+        android:text="save" />
 
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/edit_activity_margin"
-        android:layout_marginTop="@dimen/edit_activity_margin"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@android:color/holo_red_dark"
         android:onClick="onDelete"
-        android:text="@string/btn_delete" />
+        android:text="delete" />
 
 </LinearLayout>

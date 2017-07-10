@@ -18,7 +18,7 @@ public class ItemsProvider extends ContentProvider {
 
 
     static final int ITEMS = 100;
-    static final int ITEM_ID = 110;
+    static final int ITEM_ID = 101;
     private ItemsDbHelper mItemsDbHelper;
 
     public static final String LOG_TAG = ItemsDbHelper.class.getSimpleName();

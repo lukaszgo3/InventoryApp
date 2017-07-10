@@ -6,7 +6,7 @@ import android.provider.BaseColumns;
 
 public class ItemsContract {
 
-    public ItemsContract() {
+    private ItemsContract() {
     }
 
     static final String CONTENT_AUTHORITY = "com.example.android.inventoryapp";
@@ -22,9 +22,10 @@ public class ItemsContract {
         public final static String TABLE_NAME = "items";
         public final static String _ID = BaseColumns._ID;
         public final static String COLUMN_ITEM_NAME = "name";
-        public final static String COLUMN_ITEM_IMAGE = "image";
-        public final static String COLUMN_ITEM_PRICE = "price";
         public final static String COLUMN_ITEM_QUANTITY = "quantity";
+        public final static String COLUMN_ITEM_PRICE = "price";
+        public final static String COLUMN_ITEM_IMAGE = "image";
+
 
     }
 }

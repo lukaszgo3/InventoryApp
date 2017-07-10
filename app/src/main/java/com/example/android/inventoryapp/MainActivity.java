@@ -56,20 +56,22 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     private void addItem() {
-        //To do adding item
+
+        AddItem fragment = new AddItem();
+        fragment.show(getFragmentManager(), "Add Item");
     }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         String[] projection = {
                 ItemsEntry._ID,
-                ItemsEntry.COLUMN_ITEM_IMAGE,
                 ItemsEntry.COLUMN_ITEM_NAME,
+                ItemsEntry.COLUMN_ITEM_QUANTITY,
                 ItemsEntry.COLUMN_ITEM_PRICE,
-                ItemsEntry.COLUMN_ITEM_QUANTITY};
+                ItemsEntry.COLUMN_ITEM_IMAGE
+                };
 
-        return new CursorLoader(
-                this,
+        return new CursorLoader(this,
                 ItemsEntry.CONTENT_URI,
                 projection,
                 null,

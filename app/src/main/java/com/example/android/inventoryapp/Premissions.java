@@ -10,7 +10,7 @@ import android.support.v4.app.ActivityCompat;
  * Created by Lach on 08.07.2017.
  */
 
-class Premissions {
+public class Premissions {
 
     public static final int PREMISSIONS_IMAGE = 0;
 

@@ -18,14 +18,14 @@ public class ItemsDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String SQL_CREATE_PRODUCTS_TABLE = "CREATE TABLE " + ItemsEntry.TABLE_NAME + " ("
+        String SQL_CREATE_ITEMS_TABLE = "CREATE TABLE " + ItemsEntry.TABLE_NAME + " ("
                 + ItemsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + ItemsEntry.COLUMN_ITEM_NAME + " TEXT NOT NULL, "
-                + ItemsEntry.COLUMN_ITEM_IMAGE + " TEXT);"
+                + ItemsEntry.COLUMN_ITEM_QUANTITY + " INTEGER NOT NULL DEFAULT 0, "
                 + ItemsEntry.COLUMN_ITEM_PRICE + " FLOAT NOT NULL DEFAULT 0.00, "
-                + ItemsEntry.COLUMN_ITEM_QUANTITY + " INTEGER NOT NULL DEFAULT 0, ";
+                + ItemsEntry.COLUMN_ITEM_IMAGE + " TEXT);";
 
-        db.execSQL(SQL_CREATE_PRODUCTS_TABLE);
+        db.execSQL(SQL_CREATE_ITEMS_TABLE);
     }
 
     @Override

@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/product_price_title"
+            android:text="price"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#AEB6BD" />
 
@@ -72,10 +72,10 @@
             android:id="@+id/priceTextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/list_product_margin"
+            android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/price"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/default_product_price"
+            android:text="0"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#AEB6BD" />
 
@@ -91,7 +91,7 @@
             android:id="@+id/buttonSellId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/list_product_margin"
+            android:layout_marginTop="15dp"
             android:backgroundTint="@android:color/holo_blue_light"
             android:text="sell"
             android:focusable="false"/>

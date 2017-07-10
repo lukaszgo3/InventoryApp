@@ -110,10 +110,10 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
         String[] projection = {
                 ItemsEntry._ID,
-                ItemsEntry.COLUMN_ITEM_IMAGE,
                 ItemsEntry.COLUMN_ITEM_NAME,
+                ItemsEntry.COLUMN_ITEM_QUANTITY,
                 ItemsEntry.COLUMN_ITEM_PRICE,
-                ItemsEntry.COLUMN_ITEM_QUANTITY};
+                ItemsEntry.COLUMN_ITEM_IMAGE,};
 
         return new CursorLoader(
                 this,

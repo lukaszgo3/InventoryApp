@@ -33,7 +33,7 @@ public class QuantityDialog extends DialogFragment {
             mListener = (QuantityListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                    + " must implement QuantityListener");
+                    + "QuantityListener needed");
         }
     }
 
