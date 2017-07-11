@@ -26,10 +26,6 @@ import android.widget.Toast;
 import com.example.android.inventoryapp.data.ItemsContract;
 import com.example.android.inventoryapp.data.ItemsContract.ItemsEntry;
 
-/**
- * Created by Lach on 09.07.2017.
- */
-
 public class AddItem extends DialogFragment {
 
     String imageUri;
