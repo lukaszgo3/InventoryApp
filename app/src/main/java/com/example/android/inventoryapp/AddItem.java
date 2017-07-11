@@ -82,10 +82,13 @@ public class AddItem extends DialogFragment {
                         String priceString = editPrice.getText().toString().trim();
 
 
-                        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(quantityString) || TextUtils.isEmpty(priceString)) {
+                        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(quantityString) || TextUtils.isEmpty(priceString) || imageUri == null) {
 
-                            Toast.makeText(getActivity(), "Please fill out the empty fields", Toast.LENGTH_SHORT).show();
-                        } else {
+                            Toast.makeText(getActivity(), "Please fill out the empty fields and select image", Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        else {
                             Integer quantity = Integer.parseInt(editQuantity.getText().toString().trim());
                             Float price = Float.parseFloat(editPrice.getText().toString().trim());
                             addItem(name, quantity, price, imageUri);
@@ -109,7 +112,7 @@ public class AddItem extends DialogFragment {
         values.put(ItemsEntry.COLUMN_ITEM_QUANTITY, quantity);
         values.put(ItemsEntry.COLUMN_ITEM_PRICE, price);
 
-        if (!"".equals(image)) {
+        if (!image.isEmpty()) {
             values.put(ItemsEntry.COLUMN_ITEM_IMAGE, image);
         }
 

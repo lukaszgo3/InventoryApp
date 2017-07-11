@@ -45,6 +45,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     private EditText mName;
     private EditText mPrice;
     private TextView mQuantity;
+    private int mQuantityButtons;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,6 +61,9 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         mName = (EditText) findViewById(R.id.nameEditId);
         mPrice = (EditText) findViewById(R.id.priceEditId);
         mQuantity = (TextView) findViewById(R.id.quantityTextId);
+        Button plusButton = (Button) findViewById(R.id.buttonPlusId);
+        Button minusButton = (Button) findViewById(R.id.buttonMinusId);
+
 
         mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +86,32 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
                 quantityFragment.show(getFragmentManager(), "dialog");
             }
         });
+
+        plusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mQuantityButtons++;
+                displayQuantity();
+            }
+        });
+
+        minusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mQuantityButtons--;
+                if (mQuantityButtons == 0) {
+                    mQuantityButtons = 0;
+                }
+                displayQuantity();
+            }
+        });
+
+    }
+
+    public void displayQuantity() {
+        mQuantity.setText(String.valueOf(mQuantityButtons));
     }
 
     public boolean checkPermission(final Context context) {
@@ -141,23 +171,21 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             String image = data.getString(imageColumn);
             String name = data.getString(nameColumn);
             Float price = data.getFloat(priceColumn);
-            Integer quantity = data.getInt(quantityColumn);
+            mQuantityButtons = data.getInt(quantityColumn);
 
             mName.setText(name);
             mPrice.setText(Float.toString(price));
-            mQuantity.setText(Integer.toString(quantity));
+            mQuantity.setText(Integer.toString(mQuantityButtons));
+            imageUri = Uri.parse(image);
+            mImageView.setImageURI(imageUri);
 
-            if (image != null) {
-
-                mImageView.setImageURI(Uri.parse(image));
-            }
         }
     }
+
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
 
-        mImageView.setImageDrawable(null);
         mName.setText("");
         mPrice.setText(Float.toString(0));
         mQuantity.setText(Integer.toString(0));
@@ -179,11 +207,13 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == Permissions.PERMISSIONS_IMAGE && requestCode == Activity.RESULT_OK) {
+        if (requestCode == 0 && resultCode == Activity.RESULT_OK) {
 
-            Uri image = data.getData();
-            imageUri = Uri.parse(image.toString());
-            mImageView.setImageURI(image);
+            if (data != null) {
+                imageUri = data.getData();
+                mImageView.setImageURI(imageUri);
+                mImageView.invalidate();
+            }
         }
     }
 
@@ -277,10 +307,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             }
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-            }
-        });
+        builder.setNegativeButton("Cancel", null);
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
