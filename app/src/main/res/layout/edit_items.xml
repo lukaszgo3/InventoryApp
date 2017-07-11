@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/nameId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="Name: "
-            android:textColor="#2B3D4D"
+            android:text="Name:"
             android:textSize="22sp"
             android:textStyle="bold" />
 
@@ -22,9 +22,9 @@
             android:id="@+id/nameEditId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="sans-serif"
-            android:text="Item "
+            android:text="Item"
             android:textSize="22sp" />
 
     </LinearLayout>
@@ -32,14 +32,15 @@
     <ImageView
         android:id="@+id/imageId"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="150dp"
         android:scaleType="fitCenter"
         android:src="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_margin="10dp">
 
         <TextView
             android:id="@+id/price"
@@ -47,26 +48,25 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="Price: "
-            android:textColor="#2B3D4D"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/priceEditId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="sans-serif"
             android:inputType="numberDecimal"
-            android:text="500.00"
-            android:textSize="18sp" />
+            android:text="0.00"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_margin="10dp">
 
         <TextView
             android:id="@+id/quantity"
@@ -74,30 +74,30 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="Quantity: "
-            android:textColor="#2B3D4D"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/quantityTextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="sans-serif"
             android:inputType="number"
             android:text="0"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15sp">
+        android:layout_margin="10dp"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/buttonQuantity"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
@@ -107,7 +107,7 @@
 
         <Button
             android:id="@+id/btn_order"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
@@ -116,25 +116,29 @@
             android:text="order" />
 
 
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onSave"
+            android:text="save" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_save"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:onClick="onSave"
-        android:text="save" />
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
-    <Button
-        android:id="@+id/btn_delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="@android:color/holo_red_dark"
-        android:onClick="onDelete"
-        android:text="delete" />
-
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/colorAccent"
+            android:onClick="onDelete"
+            android:text="delete" />
+    </LinearLayout>
 </LinearLayout>

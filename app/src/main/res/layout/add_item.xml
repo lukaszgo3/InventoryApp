@@ -1,58 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Item"
-        android:gravity="center"
         android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="New Item"
         android:textColor="@android:color/white"
-        android:textSize="22sp"/>
+        android:textSize="26sp" />
 
     <EditText
         android:id="@+id/nameId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="7dp"
+        android:gravity="center"
         android:hint="Item name" />
 
     <EditText
         android:id="@+id/quantityId"
-        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
-        android:hint="quantity"/>
+        android:layout_marginBottom="7dp"
+        android:gravity="center"
+        android:hint="quantity"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/priceId"
-        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
-        android:hint="price"/>
+        android:layout_marginBottom="7dp"
+        android:gravity="center"
+        android:hint="price"
+        android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/chooseImageId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="16dp"
-        android:text="choose image"/>
+        android:gravity="center"
+        android:text="choose image" />
 
 </LinearLayout>

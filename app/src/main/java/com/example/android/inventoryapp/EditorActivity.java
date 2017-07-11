@@ -68,7 +68,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
                 if (checkPermission(EditorActivity.this)) {
 
                     startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI),
-                            Premissions.PREMISSIONS_IMAGE);
+                            Permissions.PERMISSIONS_IMAGE);
                 }
             }
         });
@@ -90,11 +90,11 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
                 if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context, Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
-                    Premissions.premissionsDialog("External storage", context, Manifest.permission.READ_EXTERNAL_STORAGE);
+                    Permissions.permissionsDialog("External storage", context, Manifest.permission.READ_EXTERNAL_STORAGE);
 
                 } else {
 
-                    ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Premissions.PREMISSIONS_IMAGE);
+                    ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Permissions.PERMISSIONS_IMAGE);
                 }
                 return false;
             } else {
@@ -179,7 +179,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == Premissions.PREMISSIONS_IMAGE && requestCode == Activity.RESULT_OK) {
+        if (requestCode == Permissions.PERMISSIONS_IMAGE && requestCode == Activity.RESULT_OK) {
 
             Uri image = data.getData();
             imageUri = Uri.parse(image.toString());
@@ -209,7 +209,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
     public String orderText(String name) {
         String message = "";
-        message += "I want order" + name;
+        message += "I want order " + name;
         message += "\n" + "Thank you";
         return message;
     }

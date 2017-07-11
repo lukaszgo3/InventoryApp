@@ -30,7 +30,6 @@ import com.example.android.inventoryapp.data.ItemsContract.ItemsEntry;
  * Created by Lach on 09.07.2017.
  */
 
-
 public class AddItem extends DialogFragment {
 
     String imageUri;
@@ -51,7 +50,7 @@ public class AddItem extends DialogFragment {
                 if (permissionChecker(getActivity())) {
                     startActivityForResult(new Intent(Intent.ACTION_PICK,
                                     MediaStore.Images.Media.INTERNAL_CONTENT_URI),
-                            Premissions.PREMISSIONS_IMAGE);
+                            Permissions.PERMISSIONS_IMAGE);
                 }
             }
         });
@@ -126,7 +125,7 @@ public class AddItem extends DialogFragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == Premissions.PREMISSIONS_IMAGE && resultCode == Activity.RESULT_OK) {
+        if (requestCode == Permissions.PERMISSIONS_IMAGE && resultCode == Activity.RESULT_OK) {
             Uri image = data.getData();
             imageUri = image.toString();
 
@@ -143,12 +142,12 @@ public class AddItem extends DialogFragment {
 
                     if (shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
-                        Premissions.premissionsDialog("External storage", context, Manifest.permission.READ_EXTERNAL_STORAGE);
+                        Permissions.permissionsDialog("External storage", context, Manifest.permission.READ_EXTERNAL_STORAGE);
 
                     } else {
 
                         requestPermissions(new String[]{
-                                Manifest.permission.READ_EXTERNAL_STORAGE}, Premissions.PREMISSIONS_IMAGE);
+                                Manifest.permission.READ_EXTERNAL_STORAGE}, Permissions.PERMISSIONS_IMAGE);
                     }
                 }
                 return false;
@@ -168,12 +167,12 @@ public class AddItem extends DialogFragment {
 
         switch (requestCode) {
 
-            case Premissions.PREMISSIONS_IMAGE: {
+            case Permissions.PERMISSIONS_IMAGE: {
 
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                     startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI),
-                            Premissions.PREMISSIONS_IMAGE);
+                            Permissions.PERMISSIONS_IMAGE);
                 } else {
 
                     Toast.makeText(getActivity(), "Permission Denied", Toast.LENGTH_SHORT).show();

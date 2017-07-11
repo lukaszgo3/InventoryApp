@@ -10,7 +10,7 @@ public class ItemsContract {
     }
 
     static final String CONTENT_AUTHORITY = "com.example.android.inventoryapp";
-    static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+    private static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
     static final String PATH_ITEMS = "items";
 
     public static final class ItemsEntry implements BaseColumns {
@@ -25,7 +25,5 @@ public class ItemsContract {
         public final static String COLUMN_ITEM_QUANTITY = "quantity";
         public final static String COLUMN_ITEM_PRICE = "price";
         public final static String COLUMN_ITEM_IMAGE = "image";
-
-
     }
 }

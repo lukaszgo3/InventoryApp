@@ -1,6 +1,5 @@
 package com.example.android.inventoryapp.data;
 
-
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -15,7 +14,6 @@ import android.util.Log;
 import com.example.android.inventoryapp.data.ItemsContract.ItemsEntry;
 
 public class ItemsProvider extends ContentProvider {
-
 
     static final int ITEMS = 100;
     static final int ITEM_ID = 101;

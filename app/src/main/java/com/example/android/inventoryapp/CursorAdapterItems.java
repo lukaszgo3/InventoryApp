@@ -20,11 +20,11 @@ import com.example.android.inventoryapp.data.ItemsContract.ItemsEntry;
  * Created by Lach on 08.07.2017.
  */
 
-public class CursorAdapterItems extends CursorAdapter {
+class CursorAdapterItems extends CursorAdapter {
 
     private Context mContext;
 
-    public CursorAdapterItems(Context context, Cursor cursor){
+    CursorAdapterItems(Context context, Cursor cursor) {
         super(context, cursor, 0);
     }
 
@@ -41,7 +41,7 @@ public class CursorAdapterItems extends CursorAdapter {
         ImageView image = (ImageView) view.findViewById(R.id.imageId);
         TextView name = (TextView) view.findViewById(R.id.nameId);
         TextView price = (TextView) view.findViewById(R.id.priceTextId);
-        TextView quantity = (TextView) view.findViewById(R.id.quantityTextId);
+        TextView quantity = (TextView) view.findViewById(R.id.quantityId);
 
         final String xImage = cursor.getString(cursor.getColumnIndexOrThrow(ItemsEntry.COLUMN_ITEM_IMAGE));
         final String xName = cursor.getString(cursor.getColumnIndexOrThrow(ItemsEntry.COLUMN_ITEM_NAME));
@@ -49,12 +49,13 @@ public class CursorAdapterItems extends CursorAdapter {
         final Integer xQuantity = cursor.getInt(cursor.getColumnIndexOrThrow(ItemsEntry.COLUMN_ITEM_QUANTITY));
 
         name.setText(xName);
-        price.setText(Float.toString(xPrice));
-        quantity.setText(Integer.toString(xQuantity));
-        if(xImage != null){
+        price.setText(String.valueOf(xPrice));
+        quantity.setText(String.valueOf(xQuantity));
+
+        if (xImage != null) {
             image.setVisibility(View.VISIBLE);
             image.setImageURI(Uri.parse(xImage));
-        }else{
+        } else {
             image.setVisibility(View.GONE);
         }
 
@@ -63,7 +64,7 @@ public class CursorAdapterItems extends CursorAdapter {
             @Override
             public void onClick(View v) {
 
-                if (v != null){
+                if (v != null) {
 
                     Object object = v.getTag();
                     String string = object.toString();
@@ -72,12 +73,12 @@ public class CursorAdapterItems extends CursorAdapter {
                     contentValues.put(ItemsEntry.COLUMN_ITEM_IMAGE, xImage);
                     contentValues.put(ItemsEntry.COLUMN_ITEM_NAME, xName);
                     contentValues.put(ItemsEntry.COLUMN_ITEM_PRICE, xPrice);
-                    contentValues.put(ItemsEntry.COLUMN_ITEM_QUANTITY, xQuantity >= 1? xQuantity - 1: 0);
+                    contentValues.put(ItemsEntry.COLUMN_ITEM_QUANTITY, xQuantity >= 1 ? xQuantity - 1 : 0);
 
                     Uri currentUri = ContentUris.withAppendedId(ItemsEntry.CONTENT_URI, Integer.parseInt(string));
                     int rows = mContext.getContentResolver().update(currentUri, contentValues, null, null);
 
-                    if (rows == 0 || xQuantity == 0){
+                    if (rows == 0 || xQuantity == 0) {
 
                         Toast.makeText(mContext, "Error: can't sell product", Toast.LENGTH_SHORT).show();
                     }

@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 ItemsEntry.COLUMN_ITEM_QUANTITY,
                 ItemsEntry.COLUMN_ITEM_PRICE,
                 ItemsEntry.COLUMN_ITEM_IMAGE
-                };
+        };
 
         return new CursorLoader(this,
                 ItemsEntry.CONTENT_URI,

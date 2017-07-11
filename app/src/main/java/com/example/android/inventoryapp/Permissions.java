@@ -6,15 +6,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v4.app.ActivityCompat;
 
-/**
- * Created by Lach on 08.07.2017.
- */
+class Permissions {
 
-public class Premissions {
+    static final int PERMISSIONS_IMAGE = 0;
 
-    public static final int PREMISSIONS_IMAGE = 0;
-
-    public static void premissionsDialog(final String string, final Context context, final String permission) {
+    static void permissionsDialog(final String string, final Context context, final String permission) {
 
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(context);
         alertBuilder.setCancelable(true);
@@ -26,7 +22,7 @@ public class Premissions {
                     public void onClick(DialogInterface dialog, int which) {
                         ActivityCompat.requestPermissions((Activity) context,
                                 new String[]{permission},
-                                PREMISSIONS_IMAGE);
+                                PERMISSIONS_IMAGE);
                     }
                 });
 

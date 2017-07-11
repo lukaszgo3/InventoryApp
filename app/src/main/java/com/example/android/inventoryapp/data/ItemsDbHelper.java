@@ -6,13 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.android.inventoryapp.data.ItemsContract.ItemsEntry;
 
-
-public class ItemsDbHelper extends SQLiteOpenHelper {
+class ItemsDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "store.db";
     private static final int DATABASE_VERSION = 1;
 
-    public ItemsDbHelper(Context context) {
+    ItemsDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

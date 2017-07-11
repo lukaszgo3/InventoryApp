@@ -1,9 +1,9 @@
 package com.example.android.inventoryapp;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,20 +19,20 @@ public class QuantityDialog extends DialogFragment {
 
     int mQuantity;
 
-    public static interface QuantityListener {
+    interface QuantityListener {
         void finishQuantityDialog(String quantity);
     }
 
     private QuantityListener mListener;
 
     @Override
-    public void onAttach(Activity activity) {
+    public void onAttach(Context context) {
 
-        super.onAttach(activity);
+        super.onAttach(context);
         try {
-            mListener = (QuantityListener) activity;
+            mListener = (QuantityListener) context;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
+            throw new ClassCastException(context.toString()
                     + "QuantityListener needed");
         }
     }
@@ -53,7 +53,7 @@ public class QuantityDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         final View view = inflater.inflate(R.layout.dialog_quantity, null);
-        final EditText QuantityEditText = (EditText) view.findViewById(R.id.edit_text_quantity);
+        final EditText QuantityEditText = (EditText) view.findViewById(R.id.editQuantityId);
 
         QuantityEditText.setText(Integer.toString(mQuantity));
 
